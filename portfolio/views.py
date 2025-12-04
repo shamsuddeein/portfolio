@@ -5,7 +5,8 @@ from .forms import ContactForm  # Import the correct form
 
 
 def homePage(request):
-    projects = Project.objects.all()[:2]
+    # Change [:2] to all() or just remove the slice to get everything
+    projects = Project.objects.all() 
     return render(request, 'portfolio/home.html', {'projects': projects})
 
 def resume(request):
